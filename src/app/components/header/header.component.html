@@ -1,9 +1,11 @@
 <div class="header">
-    <button class="nav-bar">DESPRE</button>
-    <button class="nav-bar">INTREBARI FRECVENTE</button>
-    <button class="nav-bar">INTRA IN CONT</button>
-    <img src="assets/logo-primarie.jpeg">
-    <button class="nav-bar">PROIECTE</button>
-    <button class="nav-bar">PROIECTE IN IMPLEMNETARE</button>
-    <button class="nav-bar">AUTENTIFICARE</button>
+  <button class="nav-bar" (click)="goToAbout()">DESPRE</button>
+  <button class="nav-bar" (click)="goToQuestions()">INTREBARI FRECVENTE</button>
+  <button *ngIf="!authenticated" class="nav-bar" (click)="goToRegister()">INTRA IN CONT</button>
+  <button *ngIf="authenticated" class="nav-bar" (click)="goToMyAccount()">CONTUL MEU</button>
+  <img src="assets/logo-primarie.jpeg">
+  <button class="nav-bar" (click)="goToProjects()">PROIECTE</button>
+  <button class="nav-bar" (click)="goToProjectInImplementation()">PROIECTE IN IMPLEMNETARE</button>
+  <button *ngIf="!authenticated" class="nav-bar" (click)="goToRegister()">INREGISTRARE</button>
+  <button *ngIf="authenticated" class="nav-bar" (click)="goToMyProjects()">PROIECTELE MELE</button>
 </div>
