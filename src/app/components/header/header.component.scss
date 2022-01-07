@@ -1,0 +1,35 @@
+.header {
+  display: inline-block;
+  margin: -10px;
+  padding: 0px;
+  background-color: blue;
+  position: relative;
+  vertical-align: top;
+}
+
+.logo-header{
+  width: 302px;
+  display: inline-block;
+}
+
+img {
+  width: 150px;
+  height: 110px;
+  padding-left: 45px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  vertical-align: top;
+}
+
+.nav-bar {
+  margin-top: 0px;
+  width: 288px;
+  height: 155px;
+  border: blue;
+  background-color: blue;
+  font-weight: bold;
+  color: white;
+  &:hover{
+    color: darkorange;
+  }
+}
