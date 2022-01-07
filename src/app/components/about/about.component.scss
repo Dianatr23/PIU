@@ -1,0 +1,73 @@
+.bugetare {
+  color: gray;
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 585px;
+  margin-top: 15px;
+}
+
+.despre {
+  color: blue;
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 680px;
+  margin-top: 45px;
+}
+
+.content {
+  background-color: #f8f9fb;
+}
+
+.about1 {
+  margin-top: 30px;
+  margin-left: 210px;
+  vertical-align: top;
+}
+
+.about2 {
+  margin-top: 30px;
+  margin-left: 50px;
+  vertical-align: top;
+}
+
+.title1 {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 50px;
+  color: blue;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.title2 {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 190px;
+  color: blue;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.text1 {
+  margin-left: 50px;
+}
+
+.text2 {
+  margin-left: 190px;
+  vertical-align: top;
+  margin-top: 35px;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  margin-left: 30px;
+
+}
+
+.content::after {
+  content: "";
+  clear: both;
+  display: table;
+}

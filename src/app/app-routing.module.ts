@@ -46,7 +46,7 @@ const routes: Routes = [
     path: 'projects-in-implementation',
     component: ProjectsInImplementationComponent
   },
-  {path: '**', redirectTo: '/login'}
+  {path: '**', redirectTo: '/main-page'}
 ];
 
 @NgModule({
