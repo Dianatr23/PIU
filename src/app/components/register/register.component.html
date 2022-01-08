@@ -11,10 +11,10 @@
       <p class="title1">AUTENTIFICARE</p>
       <hr class="hr1">
       <p class="label">Email-ul sau numarul de telefon</p>
-      <input>
+      <input type="text" [(ngModel)]="emailTelefon">
       <p class="label">Parola</p>
-      <input type="password">
-      <button>CONECTEAZA-TE</button>
+      <input type="password" [(ngModel)]="parolaLogin">
+      <button (click)="login()">CONECTEAZA-TE</button>
     </div>
 
     <div class="creare">
@@ -24,22 +24,22 @@
       <div class="row-input">
         <div class="column1">
           <p class="label">Nume</p>
-          <input>
+          <input type="text" [(ngModel)]="nume">
         </div>
         <div class="column2">
           <p class="label">Prenume</p>
-          <input>
+          <input type="text" [(ngModel)]="prenume">
         </div>
       </div>
 
       <div class="row-input">
         <div class="column1">
           <p class="label">Adresa de email</p>
-          <input type="email">
+          <input type="email" type="text" [(ngModel)]="email">
         </div>
         <div class="column2">
           <p class="label">Numarul de telefon</p>
-          <input>
+          <input type="text" [(ngModel)]="telefon">
         </div>
       </div>
 
@@ -61,17 +61,17 @@
       <div class="row-input">
         <div class="column1">
           <p class="label">Parola</p>
-          <input type="password">
+          <input type="password" [(ngModel)]="parola">
         </div>
         <div class="column2">
           <p class="label">Confirmare parola</p>
-          <input type="password">
+          <input type="password" [(ngModel)]="confirmare">
         </div>
       </div>
 
       <div class="row-input">
         <div class="column1-acord">
-        <input class="check" type="checkbox">
+        <input class="check" type="checkbox" [(ngModel)]="notificari">
         </div>
         <div class="column2-acord">
         <p class="label-acord">Sunt de acord sa fiu notificat atunci cand apar proiecte noi</p>

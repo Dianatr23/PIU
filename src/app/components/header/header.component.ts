@@ -9,11 +9,16 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
 
   authenticated = false;
+  email: string | null = '';
 
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
+    this.email = localStorage.getItem('user');
+    if (this.email !== null) {
+      this.authenticated = true;
+    }
   }
 
   goToAbout(): void {

@@ -13,6 +13,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectsInImplementationComponent } from './components/projects-in-implementation/projects-in-implementation.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { MyProjectsComponent } from './components/my-projects/my-projects.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MyProjectsComponent } from './components/my-projects/my-projects.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
