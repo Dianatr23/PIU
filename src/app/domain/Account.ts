@@ -11,6 +11,9 @@ export class Account {
     this.zona2 = zona2;
     this.parola = parola;
     this.notificari = notificari;
+    this.motivatia = '';
+    this.descriere = '';
+    this.poza = '';
     this.user = new User(email, telefon, parola);
   }
 
@@ -22,5 +25,8 @@ export class Account {
   zona2: string;
   parola: string;
   notificari: boolean;
+  descriere: string;
+  motivatia: string;
+  poza: string;
   user: User;
 }

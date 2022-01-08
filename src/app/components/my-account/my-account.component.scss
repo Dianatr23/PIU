@@ -1,0 +1,112 @@
+.bugetare {
+  color: gray;
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 585px;
+  margin-top: 15px;
+}
+
+.cont {
+  color: blue;
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 645px;
+  margin-top: 45px;
+}
+
+.column1 {
+  flex: 50%;
+  margin-left: 15px;
+}
+
+.column2 {
+  flex: 50%;
+  margin-left: 40px;
+}
+
+.row-input {
+  display: flex;
+}
+
+.title {
+  margin-left: 15px;
+  font-size: larger;
+  color: white;
+  padding-top: 10px;
+  font-weight: bolder;
+}
+
+.hr {
+  width: 760px;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 300px;
+  margin-left: 15px;
+  border-radius: 25px;
+  height: 30px;
+  color: blue;
+  padding-left: 15px;
+}
+
+.label {
+  color: white;
+  font-weight: bolder;
+  font-size: large;
+  margin-left: 15px;
+}
+
+.editare {
+  width: 790px;
+  height: 500px;
+  background-color: blue;
+  border-radius: 25px;
+  margin-top: 30px;
+  float: left;
+  margin-left: 30px;
+}
+
+select {
+  margin-left: 15px;
+  width: 150px;
+  height: 30px;
+}
+
+.warning {
+  margin-left: 15px;
+  margin-top: 25px;
+  font-weight: bolder;
+  font-size: medium;
+  color: darkorange;
+}
+
+.column1-acord {
+  flex: 50%;
+  margin-top: 5px;
+}
+
+.column2-acord {
+  flex: 50%;
+  margin-left: -700px;
+}
+
+.check {
+  width: 20px;
+}
+
+.label-acord {
+  color: white;
+}
+
+.button-edit {
+  height: 40px;
+  border-radius: 25px;
+  background-color: white;
+  border-color: white;
+  color: blue;
+  font-size: larger;
+  font-weight: bolder;
+  margin-top: 15px;
+  margin-left: 235px;
+}

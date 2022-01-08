@@ -1,1 +1,57 @@
-<p>my-account works!</p>
+<div>
+  <app-header></app-header>
+
+  <div>
+    <p class="cont">CONTUL MEU</p>
+    <p class="bugetare">BUGETARE PARTICIPATIVA</p>
+  </div>
+
+  <div class="editare">
+    <p class="title">EDITARE DATE PERSONALE</p>
+    <hr class="hr">
+
+    <div class="row-input">
+      <div class="column1">
+        <p class="label">Adresa de email</p>
+        <input type="email" type="text" [(ngModel)]="account.email">
+      </div>
+      <div class="column2">
+        <p class="label">Numarul de telefon</p>
+        <input type="text" [(ngModel)]="account.telefon">
+      </div>
+    </div>
+
+
+    <div class="row-input">
+      <div class="column1">
+        <p class="label">Zona de interes (1)</p>
+        <select (change)="selectChangeHandler1($event)">
+          <option *ngFor="let zona of zone1"  [value]="zona">{{zona}}</option>
+        </select>
+      </div>
+      <div class="column2">
+        <p class="label">Zona de interes (2)</p>
+        <select (change)="selectChangeHandler2($event)">
+          <option *ngFor="let zona of zone2" [value]="zona">{{zona}}</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="warning">
+      ATENTIE! ZONELE DE INTERES POT FI MODIFICATE DOAR IN PERIOADA IN CARE NICI O EDITIE DE BUGETARE PARTICIPATIVA
+      NU SE AFLA IN DESFASURARE!
+    </p>
+
+    <div class="row-input">
+      <div class="column1-acord">
+        <input class="check" type="checkbox" [(ngModel)]="account.notificari">
+      </div>
+      <div class="column2-acord">
+        <p class="label-acord">Sunt de acord sa fiu notificat atunci cand apar proiecte noi</p>
+      </div>
+    </div>
+
+    <button class="button-edit" (click)="editPersonalData()">EDITARE DATE PERSONALE</button>
+
+  </div>
+</div>
