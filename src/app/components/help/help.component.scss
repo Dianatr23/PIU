@@ -1,0 +1,56 @@
+.bugetare{
+    color: gray;
+    font-weight: bolder;
+    font-size: larger;
+    margin-left: 585px;
+    margin-top: 15px;
+}
+
+.help{
+    color: blue;
+    font-weight: bolder;
+    font-size: larger;
+    margin-left: 680px;
+    margin-top: 45px;
+}
+
+.content{
+    background-color: #f8f9fb;
+}
+
+.help1 {
+  margin-left: 190px;
+  vertical-align: top;
+  margin-top: 35px;
+}
+
+  
+.help2 {
+  margin-left: 190px;
+  vertical-align: top;
+  margin-top: 35px;
+}
+
+  .title1 {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 50px;
+    color: blue;
+    font-size: large;
+    font-weight: bolder;
+  }
+  
+  .title2 {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 190px;
+    color: blue;
+    font-size: large;
+    font-weight: bolder;
+  }
+  
+  .content::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

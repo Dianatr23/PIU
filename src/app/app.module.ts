@@ -13,6 +13,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectsInImplementationComponent } from './components/projects-in-implementation/projects-in-implementation.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { MyProjectsComponent } from './components/my-projects/my-projects.component';
+import { HelpComponent } from './components/help/help.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

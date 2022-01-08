@@ -49,4 +49,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/my-account');
   }
 
+  goToHelp(): void {
+    this.router.navigateByUrl('/help');
+  }
+
 }

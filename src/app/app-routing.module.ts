@@ -8,6 +8,7 @@ import {ProjectsComponent} from "./components/projects/projects.component";
 import {MyProjectsComponent} from "./components/my-projects/my-projects.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {ProjectsInImplementationComponent} from "./components/projects-in-implementation/projects-in-implementation.component";
+import {HelpComponent} from './components/help/help.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'projects-in-implementation',
     component: ProjectsInImplementationComponent
+  },
+  {
+    path: 'help',
+    component: HelpComponent
   },
   {path: '**', redirectTo: '/main-page'}
 ];
