@@ -1,1 +1,86 @@
-<p>register works!</p>
+<div>
+  <app-header></app-header>
+
+  <div>
+    <p class="intra">INTRA IN CONT</p>
+    <p class="bugetare">BUGETARE PARTICIPATIVA</p>
+  </div>
+
+  <div class="row">
+    <div class="autentificare">
+      <p class="title1">AUTENTIFICARE</p>
+      <hr class="hr1">
+      <p class="label">Email-ul sau numarul de telefon</p>
+      <input>
+      <p class="label">Parola</p>
+      <input type="password">
+      <button>CONECTEAZA-TE</button>
+    </div>
+
+    <div class="creare">
+      <p class="title2">CREARE CONT NOU</p>
+      <hr class="hr2">
+
+      <div class="row-input">
+        <div class="column1">
+          <p class="label">Nume</p>
+          <input>
+        </div>
+        <div class="column2">
+          <p class="label">Prenume</p>
+          <input>
+        </div>
+      </div>
+
+      <div class="row-input">
+        <div class="column1">
+          <p class="label">Adresa de email</p>
+          <input type="email">
+        </div>
+        <div class="column2">
+          <p class="label">Numarul de telefon</p>
+          <input>
+        </div>
+      </div>
+
+      <div class="row-input">
+        <div class="column1">
+          <p class="label">Zona de interes (1)</p>
+          <select (change)="selectChangeHandler1($event)">
+            <option *ngFor="let zona of zone" [value]="zona">{{zona}}</option>
+          </select>
+        </div>
+        <div class="column2">
+          <p class="label">Zona de interes (2)</p>
+          <select (change)="selectChangeHandler2($event)">
+            <option *ngFor="let zona of zone" [value]="zona">{{zona}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row-input">
+        <div class="column1">
+          <p class="label">Parola</p>
+          <input type="password">
+        </div>
+        <div class="column2">
+          <p class="label">Confirmare parola</p>
+          <input type="password">
+        </div>
+      </div>
+
+      <div class="row-input">
+        <div class="column1-acord">
+        <input class="check" type="checkbox">
+        </div>
+        <div class="column2-acord">
+        <p class="label-acord">Sunt de acord sa fiu notificat atunci cand apar proiecte noi</p>
+        </div>
+      </div>
+
+      <button class="button-create">CREAZA-TI CONT NOU</button>
+
+    </div>
+  </div>
+
+</div>

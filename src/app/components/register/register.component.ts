@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  zona1 = '';
+  zona2 = '';
+  zone = ['Baciu', 'Buna Ziua', 'Dambul Rotund', 'Europa', 'Gheorgheni', 'Grigorescu', 'Intre Lacuri', 'Manastur',
+          'Marasti', 'Zorilor'];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  selectChangeHandler1(event: any): void {
+    this.zona1 = event.target.value;
+  }
+
+  selectChangeHandler2(event: any): void {
+    this.zona2 = event.target.value;
   }
 
 }
