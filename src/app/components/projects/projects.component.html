@@ -5,8 +5,9 @@
     <div class="category">
       <p class="label">Categorie</p>
       <select (change)="selectChangeHandlerCategories($event)">
-        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+        <option id="category" *ngFor="let category of categories" [value]="category">{{category}}</option>
       </select>
+      <p><button type="button" class="submit" (click)="applyFilter()">Submit</button></p>
     </div>
 
     <div class="year">
@@ -14,15 +15,14 @@
       <select (change)="selectChangeHandlerYear($event)">
         <option *ngFor="let year of years" [value]="year">{{year}}</option>
       </select>
-      <p><button type="button" class="submit">Submit</button></p>
     </div>
 
     <div class="budget">
-      <p class="label">Buget</p>
+      <p class="label">Zona</p>
       <select (change)="selectChangeHandlerBudget($event)">
-        <option *ngFor="let budget of budgets" [value]="budget">{{budget}}</option>
+        <option *ngFor="let budget of zone" [value]="budget">{{budget}}</option>
       </select>
-      <input type="text">
+      <p><button type="button" class="submit" (click)="clearFilter()">Clear filter</button></p>
     </div>
 
     <div>
@@ -32,7 +32,11 @@
 
   </div>
 
-  <app-project-card [project1]="item" (click)="goToProject(item)"></app-project-card>
-  <app-project-card [project1]="item2" (click)="goToProject(item2)"></app-project-card>
-  <app-project-card [project1]="item3" (click)="goToProject(item3)"></app-project-card>
+  <div *ngFor="let project of projects" class="cards">
+    <app-project-card *ngIf="!filtered"  [project1]="project" (click)="goToProject(project)"></app-project-card>
+  </div>
+
+  <div *ngFor="let project of filteredProjects" class="cards">
+    <app-project-card *ngIf="filtered"  [project1]="project" (click)="goToProject(project)"></app-project-card>
+  </div>
 </div>

@@ -16,17 +16,20 @@
   </div>
   <div>
     <p class="creator">{{project1.creator}}</p>
-    <p class="creator">{{project1.budget}}</p>
-    <button type="button" class="vote">Voteaza</button>
+    <p class="creator">{{project1.budget}} €</p>
+    <p class="creator">Votes: {{project1.votesNumber}}</p>
+    <button type="button" class="vote" (click)="vote()">Voteaza</button>
   </div>
   <div class="forum">
     <div class="content">
-      The Power Mac G4 Cube is a personal computer of the Macintosh family sold by Apple from July 2000 to 2001. It was designed by Jonathan Ive and conceived by CEO Steve Jobs as a powerful, miniaturized desktop computer. Apple developed new technologies and manufacturing methods for its 7.7-inch (20 cm) cubic computer housed in clear acrylic glass. The Cube was mid-range, between the consumer iMac G3 and the professional Power Mac G4. It was announced at the Macworld Expo on July 19, 2000. It won awards for its design, but reviews noted the high cost for its power, its limited expandability, and cosmetic defects. It was a commercial failure, selling just 150,000 units before production ended within a year. The Cube was a rare failure for the company under Jobs, after a successful period that brought the company back from the brink of bankruptcy. However, it influenced future Apple products, from the iPod to the Mac mini. New York's Museum of Modern Art holds a G4 Cube as part of its collection. (Full article...)</div>
-    <p><input class="text" type="text"><button class="send" type="button">Send</button></p>
+      <div class="opinions"></div>
+      <p><input class="text" type="text" placeholder="Spune-ti parerea!" #text><button class="send" type="button" (click)="sendOpinion(text.value)">Send</button></p>
   </div>
   <div class="detailsWindow">
-      <div class="detailsText">{{project1.meetingDate}}
+      <div class="detailsText">
+        {{project1.meetingDate}}
       <p>{{project1.meetingHour}}</p>
       <p>{{project1.meetingDescription}}</p></div>
   </div>
+</div>
 </div>

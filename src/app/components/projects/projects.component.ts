@@ -25,7 +25,9 @@ export class ProjectsComponent implements OnInit {
     "15 Ianuarie 2022",
     "Ora 12:00",
     "Va astept intr-o discutie aprinsa despre proiectul pe care l-am propus. " +
-    "Astept parerile voastre constructive. Oricine este binevenit");
+    "Astept parerile voastre constructive. Oricine este binevenit",
+    0,
+    "Zorilor");
 
   item2 = new Project(
     "Renovarea trotuarelor pietonale",
@@ -42,7 +44,9 @@ export class ProjectsComponent implements OnInit {
     "10 Februarie 2022",
     "Ora 10:00",
     "Va astept intr-o discutie aprinsa despre proiectul pe care l-am propus. " +
-    "Astept parerile voastre constructive. Oricine este binevenit");
+    "Astept parerile voastre constructive. Oricine este binevenit",
+    100,
+    "Buna Ziua");
 
   item3 = new Project(
     "Crearea de noi parcari",
@@ -54,16 +58,29 @@ export class ProjectsComponent implements OnInit {
     "\n" +
     "Parasolarul este ușor de asamblat datorită elementelor de fixare din oțel inoxidabil pe fiecare colț și a funiei incluse.",
     3000,
-    "Agrement",
+    "Infrastructura",
     2022,
     "15 Martie 2022",
     "Ora 15:00",
     "Va astept intr-o discutie aprinsa despre proiectul pe care l-am propus. " +
-    "Astept parerile voastre constructive. Oricine este binevenit");
+    "Astept parerile voastre constructive. Oricine este binevenit",
+    200,
+    "Baciu");
+
+  projects = [this.item, this.item2, this.item3];
+  filteredProjects: Array<Project> = [];
+  auxArray: Array<Project> = [];
+
+  filtered = false;
 
   categories = ['Agrement', 'Infrastructura', 'Amenajare spatii publice'];
   years = ['2021', '2022'];
-  budgets = ['<', '>', '='];
+  zone = ['Baciu', 'Buna Ziua', 'Dambul Rotund', 'Europa', 'Gheorgheni', 'Grigorescu', 'Intre Lacuri', 'Manastur',
+    'Marasti', 'Zorilor'];
+
+  selectedCategory: string | undefined;
+  selectedYear: string | undefined;
+  selectedZone: string | undefined;
 
   constructor(private router: Router) {
   }
@@ -72,15 +89,15 @@ export class ProjectsComponent implements OnInit {
   }
 
   selectChangeHandlerCategories(event: any): void {
-    this.categories = event.target.value;
+    this.selectedCategory = event.target.value;
   }
 
   selectChangeHandlerYear(event: any): void {
-    this.years = event.target.value;
+    this.selectedYear = event.target.value;
   }
 
   selectChangeHandlerBudget(event: any): void {
-    this.budgets = event.target.value;
+    this.selectedZone = event.target.value;
   }
 
   goToProject(project: Project): void {
@@ -94,6 +111,23 @@ export class ProjectsComponent implements OnInit {
     localStorage.setItem('date', project.meetingDate);
     localStorage.setItem('hour', project.meetingHour);
     localStorage.setItem('meetingDescription', project.meetingDescription);
+    localStorage.setItem('votes', project.votesNumber.toString());
+    localStorage.setItem('zone', project.zone);
     this.router.navigateByUrl('/project');
+  }
+
+  applyFilter(): void{
+    this.filteredProjects = [];
+     this.projects.forEach(obj => {
+       console.log(this.selectedCategory);
+       if(obj.category === this.selectedCategory){
+         this.filteredProjects.push(obj);
+         this.filtered = true;
+       }
+     })
+  }
+
+  clearFilter(): void{
+    this.filtered = false;
   }
 }

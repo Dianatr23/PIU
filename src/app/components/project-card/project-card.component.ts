@@ -9,7 +9,7 @@ import {Project} from "../../domain/Project";
 })
 export class ProjectCardComponent implements OnInit {
 
-  @Input() project1 = new Project("", "", "", "", 0, "", 0, "", "", ""); // decorate the property with @Input()
+  @Input() project1 : Project | undefined; // decorate the property with @Input()
 
   constructor() { }
 

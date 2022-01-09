@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Project} from "../../domain/Project";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-project',
@@ -8,9 +9,9 @@ import {Project} from "../../domain/Project";
 })
 export class ProjectComponent implements OnInit {
 
-  project1 = new Project("", "", "", "", 0, "", 0, "", "", "");
+  project1 = new Project("", "", "", "", 0, "", 0, "", "", "", 0, "");
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.project1.title = localStorage.getItem('title')!;
@@ -23,6 +24,8 @@ export class ProjectComponent implements OnInit {
     this.project1.meetingDate = localStorage.getItem('date')!;
     this.project1.meetingHour = localStorage.getItem('hour')!;
     this.project1.meetingDescription = localStorage.getItem('meetingDescription')!;
+    this.project1.votesNumber = Number(localStorage.getItem('votes'))!;
+    this.project1.zone = localStorage.getItem('zone')!;
   }
 
   openDetails(): void{
@@ -36,4 +39,23 @@ export class ProjectComponent implements OnInit {
       (document.querySelector('.detailsText') as HTMLElement).style.visibility = "hidden";
     }
   }
+
+  sendOpinion(text: string): void{
+    if(text != ''){
+      (document.querySelector('.opinions') as HTMLElement).innerHTML =
+        (document.querySelector('.opinions') as HTMLElement).innerHTML + '<br/>' +
+        text;
+    }
+  }
+
+  vote(): void{
+    if(localStorage.getItem('user') == '')
+      this.router.navigateByUrl('/register');
+    else {
+      this.project1.votesNumber = Number(this.project1.votesNumber + 1);
+      localStorage.setItem('votes', this.project1.votesNumber.toString());
+    }
+  }
+
+
 }

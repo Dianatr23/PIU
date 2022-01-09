@@ -51,13 +51,6 @@ img{
   border-radius: 10px;
 }
 
-.content{
-  overflow-x: hidden;
-  overflow-y: auto;
-  text-align: justify;
-  height: 115px;
-}
-
 .text{
   border-bottom-left-radius: 10px;
   width: 600px;
@@ -99,8 +92,8 @@ img{
 .detailsWindow{
   border: 1px solid lightgray;
   width: 300px;
-  margin-left: 1103px;
-  margin-top: -188px;
+  margin-left: 733px;
+  margin-top: -237px;
   border-radius: 10px;
   height: 0px;
   background-color: lightblue;
@@ -111,4 +104,11 @@ img{
 
 .detailsText{
   visibility: hidden;
+}
+
+.opinions{
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  height: 115px;
 }

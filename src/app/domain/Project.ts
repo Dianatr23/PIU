@@ -9,7 +9,9 @@ export class Project {
               year: number,
               date: string,
               hour: string,
-              meetingDescription: string) {
+              meetingDescription: string,
+              votesNumber: number,
+              zone: string) {
     this.photo = photo;
     this.title = title;
     this.creator = creator;
@@ -20,6 +22,8 @@ export class Project {
     this.meetingDate = date;
     this.meetingHour = hour;
     this.meetingDescription = meetingDescription;
+    this.votesNumber = votesNumber;
+    this.zone = zone;
   }
 
   title: string;
@@ -32,5 +36,6 @@ export class Project {
   meetingDate : string;
   meetingHour: string;
   meetingDescription: string;
-
+  votesNumber: number;
+  zone: string;
 }
