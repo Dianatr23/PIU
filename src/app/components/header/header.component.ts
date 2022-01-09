@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
 
   authenticated = false;
+  admin = false;
   email: string | null = '';
 
   constructor(private router: Router) {
@@ -16,8 +17,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.email = localStorage.getItem('user');
-    if (this.email !== null && this.email !== '') {
+    if(this.email === 'diana_trifu@yahoo.com'){
+    //if (this.email !== null && this.email !== '') {
       this.authenticated = true;
+      this.admin = false;
+    }
+    else if(this.email === 'paula_dan@yahoo.com'){
+      this.authenticated = false;
+      this.admin = true;
     }
   }
 
@@ -51,6 +58,10 @@ export class HeaderComponent implements OnInit {
 
   goToHelp(): void {
     this.router.navigateByUrl('/help');
+  }
+
+  goToCheckProjects(): void{
+    this.router.navigateByUrl('/new-projects');
   }
 
 }

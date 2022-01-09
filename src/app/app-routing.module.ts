@@ -10,6 +10,7 @@ import {RegisterComponent} from "./components/register/register.component";
 import {ProjectsInImplementationComponent} from "./components/projects-in-implementation/projects-in-implementation.component";
 import {HelpComponent} from './components/help/help.component';
 import {ProjectComponent} from "./components/project/project.component";
+import { NewProjectsComponent } from './components/new-projects/new-projects.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'project',
     component: ProjectComponent
+  },
+  {
+    path: 'new-projects',
+    component: NewProjectsComponent
   },
   {path: '**', redirectTo: '/main-page'}
 ];

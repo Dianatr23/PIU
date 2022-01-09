@@ -1,0 +1,121 @@
+<div>
+    <app-header></app-header>
+    <p class="analiza">ANALIZA PROIECTE</p>
+    <p class="bugetare">BUGETARE PARTICIPATIVA</p>
+
+    <p class="title">PROIECTE NOU ADAUGATE</p>
+    <hr class="hr">
+
+    <button *ngIf="btn1" class="button-proiect1" (click)="seeProject1()">PISTE BICICLETE/ALEI</button>
+    <button *ngIf="btn2" class="button-proiect2" (click)="seeProject2()">EDUCATIE RUTIERA</button>
+    <button *ngIf="btn3" class="button-proiect3" (click)="seeProject3()">PARC DETUNATA</button>
+    <button *ngIf="btn4" class="button-proiect4" (click)="seeProject4()">INCURAJAM CITITUL</button>
+    <button *ngIf="btn5" class="button-proiect5" (click)="seeProject5()">ACOPERISUL VERDE</button>
+
+    <div *ngIf="div1" class="proiect">
+        <div class="row-input">
+            <div class="column1">
+                <p class="title1">PISTE BICICLETE/ALEI</p>
+                <img class="img1" src="assets/Proiect1.png">
+            </div>   
+        </div>   
+        <div class="row-input">
+            <div class="column1">
+                <img class="img2" src="assets/Proiect1_detalii.png">
+            </div>   
+        </div>  
+        <div class="row-input">
+                <button class="button-aproba" (click)="acceptProject1()">APROBA</button>
+                <button class="button-respinge" >RESPINGE</button>
+        </div>
+    </div> 
+
+    <div *ngIf="div2" class="proiect">
+        <div class="row-input">
+            <div class="column1">
+                <p class="title1">EDUCATIE RUTIERA</p>
+                <img class="img1" src="assets/Proiect2.png">
+            </div>   
+        </div>   
+        <div class="row-input">
+            <div class="column1">
+                <img class="img2" src="assets/proiect2_detalii1.png">
+            </div>   
+        </div>  
+        <div class="row-input">
+            <div class="column1">
+                <img class="img3" src="assets/proiect2_detalii2.png">
+            </div>   
+        </div>  
+        <div class="row-input">
+                <button class="button-aproba" (click)="acceptProject2()">APROBA</button>
+                <button class="button-respinge" >RESPINGE</button>
+        </div>
+    </div> 
+
+    <div *ngIf="div3" class="proiect">
+        <div class="row-input">
+            <div class="column1">
+                <p class="title1">PARC DETUNATA</p>
+                <img class="img1" src="assets/Proiect3.png">
+            </div>   
+        </div>   
+        <div class="row-input">
+            <div class="column1">
+                <img class="img2" src="assets/proiect3_detalii.png">
+            </div>   
+        </div>  
+        <div class="row-input">
+            <div class="column1">
+                <img class="img3" src="assets/proiect3_detalii2.png">
+            </div>   
+        </div>  
+        <div class="row-input">
+                <button class="button-aproba" (click)="acceptProject3()">APROBA</button>
+                <button class="button-respinge" >RESPINGE</button>
+        </div>
+    </div> 
+
+    <div *ngIf="div4" class="proiect">
+        <div class="row-input">
+            <div class="column1">
+                <p class="title1">INCURAJAM CITITUL</p>
+                <img class="img1" src="assets/proiect4.png">
+            </div>   
+        </div>   
+        <div class="row-input">
+            <div class="column1">
+                <img class="img2" src="assets/proiect4_detalii.png">
+            </div>   
+        </div>  
+        <div class="row-input">
+            <div class="column1">
+                <img class="img3" src="assets/proiect4_detalii2.png">
+            </div>   
+        </div>  
+        <div class="row-input">
+                <button class="button-aproba" (click)="acceptProject4()">APROBA</button>
+                <button class="button-respinge" >RESPINGE</button>
+        </div>
+    </div> 
+
+    <div *ngIf="div5" class="proiect">
+        <div class="row-input">
+            <div class="column1">
+                <p class="title1">ACOPERISUL VERDE</p>
+                <img class="img1" src="assets/proiect5.png">
+            </div>   
+        </div>   
+        <div class="row-input">
+            <div class="column1">
+                <img class="img2" src="assets/proiect5_detalii.png">
+            </div>   
+        </div>  
+        <div class="row-input">
+                <button class="button-aproba" (click)="acceptProject5()">APROBA</button>
+                <button class="button-respinge" >RESPINGE</button>
+        </div>
+    </div> 
+
+  
+</div>

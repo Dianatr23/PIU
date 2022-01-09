@@ -25,6 +25,8 @@ export class MyAccountComponent implements OnInit {
   account = new Account('Trifu', 'Diana', 'diana_trifu@yahoo.com', '0723382900',
     'Marasti', 'Grigorescu', 'diana', false);
 
+  account_admin = new Account('Dan','Paula','paula_dan@yahoo.com','0762656780','Zorilor','Marasti','paula',false);
+  
   constructor(private router: Router) {
   }
 

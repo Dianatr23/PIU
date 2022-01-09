@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ProjectComponent } from './components/project/project.component';
+import { NewProjectsComponent } from './components/new-projects/new-projects.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ProjectComponent } from './components/project/project.component';
     MyAccountComponent,
     MyProjectsComponent,
     ProjectCardComponent,
-    ProjectComponent
+    ProjectComponent,
+    NewProjectsComponent,
   ],
   imports: [
     BrowserModule,
