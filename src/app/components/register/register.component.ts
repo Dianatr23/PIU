@@ -47,8 +47,9 @@ export class RegisterComponent implements OnInit {
       if (this.parolaLogin === this.account.parola) {
         this.router.navigateByUrl('main-page');
         localStorage.setItem('user', this.account.email);
+        localStorage.setItem('zona1', this.account.zona1);
+        localStorage.setItem('zona2', this.account.zona2);
       }
     }
   }
-
 }

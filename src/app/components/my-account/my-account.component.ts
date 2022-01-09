@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Account} from "../../domain/Account";
 import {isNull} from "@angular/compiler/src/output/output_ast";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-my-account',
@@ -24,7 +25,7 @@ export class MyAccountComponent implements OnInit {
   account = new Account('Trifu', 'Diana', 'diana_trifu@yahoo.com', '0723382900',
     'Marasti', 'Grigorescu', 'diana', false);
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -103,7 +104,14 @@ export class MyAccountComponent implements OnInit {
         this.zone2.push(value);
       }
     });
+  }
 
-
+  logout(): void {
+    localStorage.setItem('user', '');
+    localStorage.setItem('zona1', '');
+    localStorage.setItem('zona2', '');
+    localStorage.setItem('email', '');
+    localStorage.setItem('telefon', '');
+    this.router.navigateByUrl('main-page');
   }
 }
