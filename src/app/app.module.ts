@@ -37,6 +37,7 @@ import { NewProjectsComponent } from './components/new-projects/new-projects.com
     ProjectCardComponent,
     ProjectComponent,
     NewProjectsComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
