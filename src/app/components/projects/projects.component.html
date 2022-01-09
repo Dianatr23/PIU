@@ -1,9 +1,38 @@
 <div>
   <app-header></app-header>
 
-  <div>
-    <p class="proiecte">PROIECTE</p>
-    <p class="bugetare">BUGETARE PARTICIPATIVA</p>
+  <div class="header">
+    <div class="category">
+      <p class="label">Categorie</p>
+      <select (change)="selectChangeHandlerCategories($event)">
+        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select>
+    </div>
+
+    <div class="year">
+      <p class="label">An</p>
+      <select (change)="selectChangeHandlerYear($event)">
+        <option *ngFor="let year of years" [value]="year">{{year}}</option>
+      </select>
+      <p><button type="button" class="submit">Submit</button></p>
+    </div>
+
+    <div class="budget">
+      <p class="label">Buget</p>
+      <select (change)="selectChangeHandlerBudget($event)">
+        <option *ngFor="let budget of budgets" [value]="budget">{{budget}}</option>
+      </select>
+      <input type="text">
+    </div>
+
+    <div>
+      <p class="proiecte">PROIECTE</p>
+      <p class="bugetare">BUGETARE PARTICIPATIVA</p>
+    </div>
+
   </div>
 
+  <app-project-card [project1]="item" (click)="goToProject(item)"></app-project-card>
+  <app-project-card [project1]="item2" (click)="goToProject(item2)"></app-project-card>
+  <app-project-card [project1]="item3" (click)="goToProject(item3)"></app-project-card>
 </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatCardModule} from "@angular/material/card";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,9 @@ import { MyAccountComponent } from './components/my-account/my-account.component
 import { MyProjectsComponent } from './components/my-projects/my-projects.component';
 import { HelpComponent } from './components/help/help.component';
 import { FormsModule } from '@angular/forms';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ProjectComponent } from './components/project/project.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +32,17 @@ import { FormsModule } from '@angular/forms';
     ProjectsComponent,
     ProjectsInImplementationComponent,
     MyAccountComponent,
-    MyProjectsComponent
+    MyProjectsComponent,
+    ProjectCardComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    NoopAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

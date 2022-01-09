@@ -1,0 +1,114 @@
+.title{
+  font-weight: bolder;
+  font-size: 35px;
+  //margin-left: 630px;
+  text-align: center;
+}
+
+img{
+  width: 300px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 50px;
+  border-radius: 10px;
+}
+
+.creator{
+  margin-top: -20px;
+  margin-left: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Algerian;
+}
+
+.details{
+  display: flex;
+}
+
+.textfield{
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 2px solid lightgray;
+  width: 700px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.vote{
+  margin-left: 120px;
+  font-size: 30px;
+  border-radius: 10px;
+  color: blue;
+  background-color: lightblue;
+}
+
+.forum{
+  margin-left: 370px;
+  margin-top: -60px;
+  border: 2px solid lightgray;
+  width: 700px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.content{
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  height: 115px;
+}
+
+.text{
+  border-bottom-left-radius: 10px;
+  width: 600px;
+  height: 20px;
+  margin-top: -10px;
+}
+
+.send{
+  width: 92px;
+  height: 27px;
+  border-bottom-right-radius: 10px;
+}
+
+.meeting{
+  display: grid;
+  margin-top: 20px;
+  margin-left: 30px;
+  width: 300px;
+}
+
+.participate{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: blue;
+  background-color: lightblue;
+}
+
+.participatedetails{
+  font-size: 25px;
+  font-weight: bold;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: blue;
+  background-color: lightblue;
+}
+
+.detailsWindow{
+  border: 1px solid lightgray;
+  width: 300px;
+  margin-left: 1103px;
+  margin-top: -188px;
+  border-radius: 10px;
+  height: 0px;
+  background-color: lightblue;
+  text-align: center;
+  color: blue;
+  transition: height 1s;
+}
+
+.detailsText{
+  visibility: hidden;
+}
