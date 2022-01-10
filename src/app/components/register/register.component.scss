@@ -57,6 +57,7 @@ input {
   height: 30px;
   color: blue;
   padding-left: 15px;
+  margin-bottom: 5px;
 }
 
 .label {
@@ -78,8 +79,8 @@ button {
 }
 
 .creare {
-  width: 900px;
-  height: 650px;
+  width: 950px;
+  height: 775px;
   background-color: blue;
   border-radius: 25px;
   margin-top: 30px;
@@ -149,6 +150,7 @@ button {
 
 .label-acord {
   color: white;
+  font-size: 15px;
 }
 
 .check {
@@ -165,3 +167,21 @@ select {
   width: 150px;
   height: 30px;
 }
+
+.nume-prenume {
+  color: darkred;
+  font-weight: bold;
+  font-size: large;
+  margin-left: 15px;
+  font-size: 17px;
+}
+
+.confirmare {
+  color: darkred;
+  font-weight: bold;
+  font-size: large;
+  margin-left: 15px;
+  font-size: 17px;
+}
+
+

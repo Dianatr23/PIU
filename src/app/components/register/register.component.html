@@ -25,22 +25,26 @@
 
       <div class="row-input">
         <div class="column1">
-          <p class="label">Nume</p>
-          <input type="text" [(ngModel)]="nume">
+          <p *ngIf="!invalid" class="label">Nume</p>
+          <p *ngIf="invalid" class="nume-prenume">Nume(cel putin 3 litere)</p>
+          <input type="text" [(ngModel)]="nume" required>
         </div>
         <div class="column2">
-          <p class="label">Prenume</p>
-          <input type="text" [(ngModel)]="prenume">
+          <p *ngIf="!invalid1" class="label">Prenume</p>
+          <p *ngIf="invalid1" class="nume-prenume">Prenume(cel putin 3 litere)</p>
+          <input type="text" required minlength="3" [(ngModel)]="prenume">
         </div>
       </div>
 
       <div class="row-input">
         <div class="column1">
-          <p class="label">Adresa de email</p>
+          <p *ngIf="!invalid5" class="label">Adresa de email</p>
+          <p *ngIf="invalid5" class="nume-prenume">Adresa de email invalida</p>
           <input type="email" type="text" [(ngModel)]="email">
         </div>
         <div class="column2">
-          <p class="label">Numarul de telefon</p>
+          <p *ngIf="!invalid3" class="label">Numarul de telefon</p>
+          <p *ngIf="invalid3" class="nume-prenume">Telefon(10 cifre)</p>
           <input type="text" [(ngModel)]="telefon">
         </div>
       </div>
@@ -59,6 +63,7 @@
           </select>
         </div>
       </div>
+      <p *ngIf="invalid2" class="confirmare">Cele doua zone de interes coincid!</p>
 
       <div class="row-input">
         <div class="column1">
@@ -70,6 +75,7 @@
           <input type="password" [(ngModel)]="confirmare">
         </div>
       </div>
+      <p *ngIf="invalid4" class="confirmare">Parolele nu coincid!</p>
 
       <div class="row-input">
         <div class="column1-acord">
@@ -80,7 +86,7 @@
         </div>
       </div>
 
-      <button class="button-create">CREAZA-TI CONT NOU</button>
+      <button class="button-create" (click)="create()">CREAZA-TI CONT NOU</button>
 
     </div>
   </div>
