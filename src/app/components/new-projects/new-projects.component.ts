@@ -26,6 +26,9 @@ export class NewProjectsComponent implements OnInit {
   loading4 = false;
   loading5 = false;
 
+  loadingA = false;
+  loadingR = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -99,28 +102,101 @@ export class NewProjectsComponent implements OnInit {
   }
 
   acceptProject1():void{
+    this.loadingA = true;
+    setTimeout(() =>{
+      this.loadingA = false;
       this.btn1 = false;
       this.div1 = false;
+    },2000);
   }
 
   acceptProject2():void{
-    this.btn2 = false;
-    this.div2 = false;
+    this.loadingA = true;
+    setTimeout(() =>{
+      this.loadingA = false;
+      this.btn2 = false;
+      this.div2 = false;
+    },2000);
+    
   }
 
   acceptProject3():void{
-    this.btn3 = false;
-    this.div3 = false;
+    this.loadingA = true;
+    setTimeout(() =>{
+      this.loadingA = false;
+      this.btn3 = false;
+      this.div3 = false;
+    },2000);
+   
   }
 
   acceptProject4():void{
-    this.btn4 = false;
-    this.div4 = false;
+    this.loadingA = true;
+    setTimeout(() =>{
+      this.loadingA = false;
+      this.btn4 = false;
+      this.div4 = false;
+    },2000);
+   
   }
 
   acceptProject5():void{
-    this.btn5 = false;
-    this.div5 = false;
+    this.loadingA = true;
+    setTimeout(() =>{
+      this.loadingA = false;
+      this.btn5 = false;
+      this.div5 = false;
+    },2000);
+   
+  }
+
+  rejectProject1():void{
+    this.loadingA = true;
+    setTimeout(() =>{
+      this.loadingR = false;
+      this.btn1 = false;
+      this.div1 = false;
+    },2000);
+  }
+
+  rejectProject2():void{
+    this.loadingR = true;
+    setTimeout(() =>{
+      this.loadingR = false;
+      this.btn2 = false;
+      this.div2 = false;
+    },2000);
+    
+  }
+
+  rejectProject3():void{
+    this.loadingR = true;
+    setTimeout(() =>{
+      this.loadingR = false;
+      this.btn3 = false;
+      this.div3 = false;
+    },2000);
+   
+  }
+
+  rejectProject4():void{
+    this.loadingR = true;
+    setTimeout(() =>{
+      this.loadingR = false;
+      this.btn4 = false;
+      this.div4 = false;
+    },2000);
+   
+  }
+
+  rejectProject5():void{
+    this.loadingR = true;
+    setTimeout(() =>{
+      this.loadingR = false;
+      this.btn5 = false;
+      this.div5 = false;
+    },2000);
+   
   }
 
 }
