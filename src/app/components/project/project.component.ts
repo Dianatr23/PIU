@@ -9,11 +9,18 @@ import {Router} from "@angular/router";
 })
 export class ProjectComponent implements OnInit {
 
-  project1 = new Project("", "", "", "", 0, "", 0, "", "", "", 0, "", "");
+  project1 = new Project("", "", "", "", 0, "", 0, "", "", "", 0, "", "", 0);
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.project1.position = Number(localStorage.getItem('position'))!;
+
+    if(localStorage.getItem("project" + this.project1.position.toString()) === "true") {
+      const x = Number(localStorage.getItem('votes'))! + 1;
+      localStorage.setItem('votes', x.toString());
+    }
+
     this.project1.title = localStorage.getItem('title')!;
     this.project1.photo = localStorage.getItem('image')!;
     this.project1.creator = localStorage.getItem('creator')!;
@@ -75,12 +82,21 @@ export class ProjectComponent implements OnInit {
         if (this.project1.zone !== zona1 && this.project1.zone !== zona2) {
           alert("Nu puteti vota acest proiect deoarece nu apartine zonelor de interes");
         } else {
-          this.project1.votesNumber = Number(this.project1.votesNumber + 1);
-          localStorage.setItem('votes', this.project1.votesNumber.toString());
+          if(localStorage.getItem("project" + this.project1.position.toString()) === "true"){
+            alert("Ati votat deja o data pentru acest proiect!");
+          } else {
+            this.project1.votesNumber = Number(this.project1.votesNumber + 1);
+            localStorage.setItem('votes', this.project1.votesNumber.toString());
+            localStorage.setItem("project" + this.project1.position.toString(), "true");
+          }
         }
       } else {
         alert("Acest proiect nu poate fi votat deoarece a trecut de etapa de votare");
       }
     }
+  }
+
+  meetingParticipate(): void{
+    alert("Aceasta intalnire nu este in desfasurare. Verificati detaliile de mai jos.");
   }
 }

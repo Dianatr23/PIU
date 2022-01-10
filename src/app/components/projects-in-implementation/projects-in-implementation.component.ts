@@ -27,7 +27,8 @@ export class ProjectsInImplementationComponent implements OnInit {
     "Astept parerile voastre constructive. Oricine este binevenit",
     0,
     "Zorilor",
-    "In curs de implementare");
+    "In curs de implementare",
+    1);
 
   item2 = new Project(
     "Renovarea trotuarelor pietonale",
@@ -47,7 +48,8 @@ export class ProjectsInImplementationComponent implements OnInit {
     "Astept parerile voastre constructive. Oricine este binevenit",
     100,
     "Buna Ziua",
-    "In curs de implementare");
+    "In curs de votare",
+    2);
 
   item3 = new Project(
     "Crearea de noi parcari",
@@ -67,7 +69,8 @@ export class ProjectsInImplementationComponent implements OnInit {
     "Astept parerile voastre constructive. Oricine este binevenit",
     200,
     "Marasti",
-    "In curs de votare");
+    "In curs de votare",
+    3);
 
   projects = [this.item, this.item2, this.item3];
   filteredProjects: Array<Project> = [];
@@ -123,6 +126,7 @@ export class ProjectsInImplementationComponent implements OnInit {
     localStorage.setItem('votes', project.votesNumber.toString());
     localStorage.setItem('zone', project.zone);
     localStorage.setItem('status', project.status);
+    localStorage.setItem('position', project.position.toString());
     this.router.navigateByUrl('/project');
   }
 
@@ -134,10 +138,9 @@ export class ProjectsInImplementationComponent implements OnInit {
         obj.zone === this.selectedZone ||
         obj.year.toString() === this.selectedYear){
         this.filteredProjects.push(obj);
-        this.filtered = true;
       }
     })
-
+    this.filtered = true;
   }
 
   clearFilter(): void{

@@ -12,7 +12,8 @@ export class Project {
               meetingDescription: string,
               votesNumber: number,
               zone: string,
-              status: string) {
+              status: string,
+              position: number) {
     this.photo = photo;
     this.title = title;
     this.creator = creator;
@@ -26,6 +27,7 @@ export class Project {
     this.votesNumber = votesNumber;
     this.zone = zone;
     this.status = status;
+    this.position = position;
   }
 
   title: string;
@@ -41,4 +43,5 @@ export class Project {
   votesNumber: number;
   zone: string;
   status: string;
+  position: number;
 }
