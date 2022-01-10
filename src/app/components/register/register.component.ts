@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../../domain/User";
 import {Account} from "../../domain/Account";
 import {Router} from "@angular/router";
 
