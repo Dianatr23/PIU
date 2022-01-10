@@ -24,13 +24,11 @@ export class RegisterComponent implements OnInit {
   emailTelefon = '';
   parolaLogin = '';
 
-  loading1 = false;
-
   account = new Account('Trifu', 'Diana', 'diana_trifu@yahoo.com', '0723382900',
     'Marasti', 'Grigorescu', 'diana', false);
 
-  account_admin = new Account('Dan','Paula','paula_dan@yahoo.com','0762656780','Zorilor','Marasti','paula',false);
-
+  account_admin = new Account('Dan','Paula','paula_dan@yahoo.com','0762656780',
+    'Zorilor','Marasti','paula',false);
 
   constructor(private router: Router) {
   }
@@ -47,26 +45,29 @@ export class RegisterComponent implements OnInit {
   }
 
   login(): void {
-    this.loading1 = true;
-    setTimeout(() =>{
-      this.loading1 = false;
       if (this.emailTelefon === this.account.email || this.emailTelefon === this.account.telefon) {
         if (this.parolaLogin === this.account.parola) {
           this.router.navigateByUrl('main-page');
           localStorage.setItem('user', this.account.email);
+          localStorage.setItem('telefon', this.account.telefon);
           localStorage.setItem('zona1', this.account.zona1);
           localStorage.setItem('zona2', this.account.zona2);
+          // localStorage.setItem('notificari', String(this.account.notificari));
+          localStorage.setItem('project1', String(this.account.user.project1));
+          localStorage.setItem('project2', String(this.account.user.project2));
+          localStorage.setItem('project3', String(this.account.user.project3));
+          localStorage.setItem('role', 'client');
         }
-      }
-      else if(this.emailTelefon === this.account_admin.email || this.emailTelefon === this.account_admin.telefon){
-        if(this.parolaLogin === this.account_admin.parola){
+      } else if (this.emailTelefon === this.account_admin.email || this.emailTelefon === this.account_admin.telefon) {
+        if (this.parolaLogin === this.account_admin.parola) {
           this.router.navigateByUrl('main-page');
-          localStorage.setItem('user',this.account_admin.email);
-          localStorage.setItem('zona1', this.account.zona1);
-          localStorage.setItem('zona2', this.account.zona2);
+          localStorage.setItem('user', this.account_admin.email);
+          localStorage.setItem('telefon', this.account_admin.telefon);
+          localStorage.setItem('zona1', this.account_admin.zona1);
+          localStorage.setItem('zona2', this.account_admin.zona2);
+          // localStorage.setItem('notificari', String(this.account_admin.notificari));
+          localStorage.setItem('role', 'admin');
         }
       }
-    },2000);
-    
-  }
+   }
 }

@@ -22,31 +22,18 @@ export class MyAccountComponent implements OnInit {
   zone1 = new Array() as Array<string>;
   zone2 = new Array() as Array<string>;
 
-  account = new Account('Trifu', 'Diana', 'diana_trifu@yahoo.com', '0723382900',
+  account_user = new Account('Trifu', 'Diana', 'diana_trifu@yahoo.com', '0723382900',
     'Marasti', 'Grigorescu', 'diana', false);
 
-  account_admin = new Account('Dan','Paula','paula_dan@yahoo.com','0762656780','Zorilor','Marasti','paula',false);
-  
+  account = new Account ('', '', '', '', '', '', '', false);
+
+  account_admin = new Account('Dan','Paula','paula_dan@yahoo.com','0762656780',
+    'Zorilor','Marasti','paula',false);
+
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-    this.getSelectedZones();
-
-    if (localStorage.getItem('email')) {
-      this.email = localStorage.getItem('email');
-      if (this.email != null) {
-        this.account.email = this.email;
-      }
-    }
-
-    if (localStorage.getItem('telefon')) {
-      this.telefon = localStorage.getItem('telefon');
-      if (this.telefon != null) {
-        this.account.telefon = this.telefon;
-      }
-    }
-
     if (localStorage.getItem('zona1')) {
       this.zona1 = localStorage.getItem('zona1');
       if (this.zona1 != null) {
@@ -58,6 +45,24 @@ export class MyAccountComponent implements OnInit {
       this.zona2 = localStorage.getItem('zona2');
       if (this.zona2 != null) {
         this.account.zona2 = this.zona2;
+      }
+    }
+
+    this.zone1 = [];
+    this.zone2 = []
+    this.getSelectedZones();
+
+    if (localStorage.getItem('user')) {
+      this.email = localStorage.getItem('user');
+      if (this.email != null) {
+        this.account.email = this.email;
+      }
+    }
+
+    if (localStorage.getItem('telefon')) {
+      this.telefon = localStorage.getItem('telefon');
+      if (this.telefon != null) {
+        this.account.telefon = this.telefon;
       }
     }
 
@@ -82,7 +87,7 @@ export class MyAccountComponent implements OnInit {
   }
 
   editPersonalData(): void {
-    localStorage.setItem('email', this.account.email);
+    localStorage.setItem('user', this.account.email);
     localStorage.setItem('telefon', this.account.telefon);
     if (this.account.notificari) {
       localStorage.setItem('notificari', 'true');
@@ -93,6 +98,7 @@ export class MyAccountComponent implements OnInit {
       localStorage.setItem('zona1', this.account.zona1);
       localStorage.setItem('zona2', this.account.zona2);
     }
+    console.log(this.account);
   }
 
   getSelectedZones(): void {
@@ -106,6 +112,8 @@ export class MyAccountComponent implements OnInit {
         this.zone2.push(value);
       }
     });
+    console.log('zone1 ' + this.zone1);
+    console.log('zone2 ' + this.zona2);
   }
 
   logout(): void {
@@ -114,6 +122,7 @@ export class MyAccountComponent implements OnInit {
     localStorage.setItem('zona2', '');
     localStorage.setItem('email', '');
     localStorage.setItem('telefon', '');
+    localStorage.setItem('role', '');
     this.router.navigateByUrl('main-page');
   }
 }

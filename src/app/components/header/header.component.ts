@@ -10,20 +10,19 @@ export class HeaderComponent implements OnInit {
 
   authenticated = false;
   admin = false;
-  email: string | null = '';
+  role: string | null = '';
 
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-    this.email = localStorage.getItem('user');
-    if(this.email === 'diana_trifu@yahoo.com'){
-    //if (this.email !== null && this.email !== '') {
+    this.role = localStorage.getItem('role');
+    if(this.role === 'client'){
       this.authenticated = true;
       this.admin = false;
     }
-    else if(this.email === 'paula_dan@yahoo.com'){
-      this.authenticated = false;
+    else if(this.role === 'admin'){
+      this.authenticated = true;
       this.admin = true;
     }
   }
