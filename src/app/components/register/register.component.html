@@ -8,7 +8,8 @@
 
   <div class="row">
     <div class="autentificare">
-      <p class="title1">AUTENTIFICARE</p>
+      <p *ngIf="!incorrect" class="title1">AUTENTIFICARE</p>
+      <p *ngIf="incorrect" class="incorect-credentials">AUTENTIFICARE - CREDENTIALE INCORECTE</p>
       <hr class="hr1">
       <p class="label">Email-ul sau numarul de telefon</p>
       <input type="text" [(ngModel)]="emailTelefon">
@@ -72,10 +73,10 @@
 
       <div class="row-input">
         <div class="column1-acord">
-        <input class="check" type="checkbox" [(ngModel)]="notificari">
+          <input class="check" type="checkbox" [(ngModel)]="notificari">
         </div>
         <div class="column2-acord">
-        <p class="label-acord">Sunt de acord sa fiu notificat atunci cand apar proiecte noi</p>
+          <p class="label-acord">Sunt de acord sa fiu notificat atunci cand apar proiecte noi</p>
         </div>
       </div>
 

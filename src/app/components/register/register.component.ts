@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
 
   emailTelefon = '';
   parolaLogin = '';
+  incorrect = false;
 
   account = new Account('Trifu', 'Diana', 'diana_trifu@yahoo.com', '0723382900',
     'Marasti', 'Grigorescu', 'diana', false);
@@ -68,6 +69,10 @@ export class RegisterComponent implements OnInit {
           localStorage.setItem('notificari', String(this.account_admin.notificari));
           localStorage.setItem('role', 'admin');
         }
+      }
+
+      if(localStorage.getItem('role') === '' || localStorage.getItem('role') === null) {
+        this.incorrect = true;
       }
    }
 }
