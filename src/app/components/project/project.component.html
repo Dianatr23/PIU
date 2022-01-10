@@ -5,16 +5,18 @@
     <p class="title">{{project1.title}}</p>
   </div>
   <div class="details">
-    <img src="{{project1.photo}}">
-    <div class="textfield">
-      {{project1.description}}
+    <div class="zone">
+      <p>Zona: {{project1.zone}}</p>
     </div>
+    <img src="{{project1.photo}}">
+    <div class="textfield">{{project1.description}}</div>
     <div class="meeting">
       <button type="button" class="participate">Participa la intalnire</button>
       <button type="button" class="participatedetails" (click)="openDetails()">Detalii intalnire</button>
     </div>
   </div>
   <div>
+    <p class="status">{{project1.status}}</p>
     <p class="creator">{{project1.creator}}</p>
     <p class="creator">{{project1.budget}} €</p>
     <p class="creator">Votes: {{project1.votesNumber}}</p>

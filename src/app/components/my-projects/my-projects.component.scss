@@ -1,0 +1,161 @@
+.bugetare {
+  color: gray;
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 585px;
+  margin-top: 15px;
+}
+
+.intra {
+  color: blue;
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 638px;
+  margin-top: 45px;
+}
+
+.autentificare {
+  background-color: blue;
+  width: 400px;
+  height: 400px;
+  border-radius: 25px;
+  margin-left: 70px;
+  margin-top: 30px;
+  margin-right: 45px;
+}
+
+.title1 {
+  margin-left: 15px;
+  font-size: larger;
+  color: white;
+  padding-top: 10px;
+  font-weight: bolder;
+}
+
+.hr1 {
+  width: 440px;
+  margin-bottom: 30px;
+}
+
+.hr2 {
+  width: 685px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 300px;
+  margin-left: 15px;
+  border-radius: 25px;
+  height: 30px;
+  color: blue;
+  padding-left: 15px;
+}
+
+.label {
+  color: white;
+  font-weight: bolder;
+  font-size: large;
+  margin-left: 15px;
+}
+
+button {
+  margin-left: 100px;
+  margin-top: 60px;
+  border-radius: 25px;
+  background-color: white;
+  border-color: white;
+  color: blue;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.creare {
+  width: 900px;
+  height: 650px;
+  background-color: blue;
+  border-radius: 25px;
+  margin-top: 30px;
+}
+
+.title2 {
+  margin-left: 15px;
+  font-size: larger;
+  color: white;
+  padding-top: 10px;
+  font-weight: bolder;
+}
+
+.autentificare {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  margin-left: 70px;
+}
+
+.creare {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  margin-left: 30px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column1 {
+  float: left;
+  width: 40.33%;
+  padding: 5px;
+}
+
+.column2 {
+  float: left;
+  width: 30.33%;
+  padding: 5px;
+  margin-left: 50px;
+}
+
+.row-input::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column1-acord {
+  float: left;
+  width: 10%;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+.column2-acord {
+  float: left;
+  width: 55.33%;
+  padding: 5px;
+  margin-left: -30px;
+  margin-top: 15px;
+}
+
+.label-acord {
+  color: white;
+}
+
+.check {
+  width: 20px;
+}
+
+.button-create {
+  margin-top: 15px;
+  margin-left: 235px;
+}
+
+select {
+  margin-left: 15px;
+  width: 150px;
+  height: 30px;
+}
+
+

@@ -20,7 +20,7 @@
     <div class="budget">
       <p class="label">Zona</p>
       <select (change)="selectChangeHandlerBudget($event)">
-        <option *ngFor="let budget of zone" [value]="budget">{{budget}}</option>
+        <option class="zone" *ngFor="let budget of zone" [value]="budget">{{budget}}</option>
       </select>
       <p><button type="button" class="submit" (click)="clearFilter()">Clear filter</button></p>
     </div>
