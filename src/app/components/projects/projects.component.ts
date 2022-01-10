@@ -27,7 +27,8 @@ export class ProjectsComponent implements OnInit {
     "Va astept intr-o discutie aprinsa despre proiectul pe care l-am propus. " +
     "Astept parerile voastre constructive. Oricine este binevenit",
     0,
-    "Zorilor");
+    "Zorilor",
+    "In curs de implementare");
 
   item2 = new Project(
     "Renovarea trotuarelor pietonale",
@@ -46,7 +47,8 @@ export class ProjectsComponent implements OnInit {
     "Va astept intr-o discutie aprinsa despre proiectul pe care l-am propus. " +
     "Astept parerile voastre constructive. Oricine este binevenit",
     100,
-    "Buna Ziua");
+    "Buna Ziua",
+    "In curs de implementare");
 
   item3 = new Project(
     "Crearea de noi parcari",
@@ -65,7 +67,8 @@ export class ProjectsComponent implements OnInit {
     "Va astept intr-o discutie aprinsa despre proiectul pe care l-am propus. " +
     "Astept parerile voastre constructive. Oricine este binevenit",
     200,
-    "Baciu");
+    "Baciu",
+    "Implementat");
 
   projects = [this.item, this.item2, this.item3];
   filteredProjects: Array<Project> = [];
@@ -73,9 +76,9 @@ export class ProjectsComponent implements OnInit {
 
   filtered = false;
 
-  categories = ['Agrement', 'Infrastructura', 'Amenajare spatii publice'];
-  years = ['2021', '2022'];
-  zone = ['Baciu', 'Buna Ziua', 'Dambul Rotund', 'Europa', 'Gheorgheni', 'Grigorescu', 'Intre Lacuri', 'Manastur',
+  categories = ['-Categorie-', 'Agrement', 'Infrastructura', 'Amenajare spatii publice'];
+  years = ['-An-', '2021', '2022'];
+  zone = ['-Zona-', 'Baciu', 'Buna Ziua', 'Dambul Rotund', 'Europa', 'Gheorgheni', 'Grigorescu', 'Intre Lacuri', 'Manastur',
     'Marasti', 'Zorilor'];
 
   selectedCategory: string | undefined;
@@ -113,6 +116,7 @@ export class ProjectsComponent implements OnInit {
     localStorage.setItem('meetingDescription', project.meetingDescription);
     localStorage.setItem('votes', project.votesNumber.toString());
     localStorage.setItem('zone', project.zone);
+    localStorage.setItem('status', project.status);
     this.router.navigateByUrl('/project');
   }
 
@@ -120,14 +124,18 @@ export class ProjectsComponent implements OnInit {
     this.filteredProjects = [];
      this.projects.forEach(obj => {
        console.log(this.selectedCategory);
-       if(obj.category === this.selectedCategory){
+       if(obj.category === this.selectedCategory ||
+         obj.zone === this.selectedZone ||
+         obj.year.toString() === this.selectedYear){
          this.filteredProjects.push(obj);
          this.filtered = true;
        }
      })
+
   }
 
   clearFilter(): void{
     this.filtered = false;
+    window.location.reload();
   }
 }

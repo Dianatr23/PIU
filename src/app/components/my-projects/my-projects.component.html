@@ -1,1 +1,54 @@
-<p>my-projects works!</p>
+<div>
+  <app-header></app-header>
+<div class="creare">
+  <p class="title2">Adaugare Proiect</p>
+  <hr class="hr2">
+
+  <div class="row-input">
+    <div class="column1">
+      <p class="label">Denumire</p>
+      <input type="text" [(ngModel)]="denumire">
+    </div>
+    <div class="column2">
+      <p class="label">Descriere</p>
+      <input class="descriere" type="text" [(ngModel)]="descriere">
+    </div>
+  </div>
+
+  <div class="row-input">
+    <div class="column1">
+      <p class="label">Buget</p>
+      <input type="text" [(ngModel)]="buget">
+    </div>
+  </div>
+
+  <div class="row-input">
+    <div class="column1">
+      <p class="label">Domeniu</p>
+      <select (change)="selectChangeHandler1($event)">
+        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row-input">
+    <div class="column1">
+      <p class="label">Zona</p>
+      <select (change)="selectChangeHandler1($event)">
+        <option *ngFor="let zona of zone" [value]="zona">{{zona}}</option>
+      </select>
+    </div>
+    <div class="column2">
+      <button class="button-create">Propune Proiectul</button>
+    </div>
+  </div>
+
+  <div class="row-input">
+    <div class="column1">
+      <p class="label">De ce ar trebui sustinut/implementat proiectul?</p>
+      <input type="text" [(ngModel)]="why">
+    </div>
+  </div>
+
+</div>
+</div>

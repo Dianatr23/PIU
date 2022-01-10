@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class ProjectComponent implements OnInit {
 
-  project1 = new Project("", "", "", "", 0, "", 0, "", "", "", 0, "");
+  project1 = new Project("", "", "", "", 0, "", 0, "", "", "", 0, "", "");
 
   constructor(private router: Router) { }
 
@@ -26,6 +26,7 @@ export class ProjectComponent implements OnInit {
     this.project1.meetingDescription = localStorage.getItem('meetingDescription')!;
     this.project1.votesNumber = Number(localStorage.getItem('votes'))!;
     this.project1.zone = localStorage.getItem('zone')!;
+    this.project1.status = localStorage.getItem('status')!;
   }
 
   openDetails(): void{
@@ -40,11 +41,27 @@ export class ProjectComponent implements OnInit {
     }
   }
 
-  sendOpinion(text: string): void{
-    if(text != ''){
-      (document.querySelector('.opinions') as HTMLElement).innerHTML =
-        (document.querySelector('.opinions') as HTMLElement).innerHTML + '<br/>' +
-        text;
+  sendOpinion(text: string): void {
+    if (localStorage.getItem('user') == '')
+      this.router.navigateByUrl('/register');
+    else {
+      let zona1 = localStorage.getItem('zona1');
+      let zona2 = localStorage.getItem('zona2');
+      if (this.project1.zone !== zona1 && this.project1.zone !== zona2) {
+        alert("Nu puteti participa in cadrul acestui proiect deoarece nu apartine zonelor de interes");
+      } else {
+        if (text != '') {
+          if ((document.querySelector('.opinions') as HTMLElement).innerHTML === '') {
+            (document.querySelector('.opinions') as HTMLElement).innerHTML =
+              (document.querySelector('.opinions') as HTMLElement).innerHTML +
+              localStorage.getItem('user') + ": " + text;
+          } else {
+            (document.querySelector('.opinions') as HTMLElement).innerHTML =
+              (document.querySelector('.opinions') as HTMLElement).innerHTML +
+              '<br/>' + localStorage.getItem('user') + ": " + text;
+          }
+        }
+      }
     }
   }
 
@@ -52,10 +69,14 @@ export class ProjectComponent implements OnInit {
     if(localStorage.getItem('user') == '')
       this.router.navigateByUrl('/register');
     else {
-      this.project1.votesNumber = Number(this.project1.votesNumber + 1);
-      localStorage.setItem('votes', this.project1.votesNumber.toString());
+      let zona1 = localStorage.getItem('zona1');
+      let zona2 = localStorage.getItem('zona2');
+      if(this.project1.zone !== zona1 && this.project1.zone !== zona2){
+        alert("Nu puteti vota acest proiect deoarece nu apartine zonelor de interes");
+      } else {
+        this.project1.votesNumber = Number(this.project1.votesNumber + 1);
+        localStorage.setItem('votes', this.project1.votesNumber.toString());
+      }
     }
   }
-
-
 }

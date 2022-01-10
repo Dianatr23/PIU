@@ -1,9 +1,42 @@
 <div>
   <app-header></app-header>
 
-  <div>
-    <p class="proiecte">PROIECTE IN IMPLEMENTARE</p>
-    <p class="bugetare">BUGETARE PARTICIPATIVA</p>
+  <div class="header">
+    <div class="category">
+      <p class="label">Categorie</p>
+      <select (change)="selectChangeHandlerCategories($event)">
+        <option id="category" *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select>
+      <p><button type="button" class="submit" (click)="applyFilter()">Submit</button></p>
+    </div>
+
+    <div class="year">
+      <p class="label">An</p>
+      <select (change)="selectChangeHandlerYear($event)">
+        <option *ngFor="let year of years" [value]="year">{{year}}</option>
+      </select>
+    </div>
+
+    <div class="budget">
+      <p class="label">Zona</p>
+      <select (change)="selectChangeHandlerBudget($event)">
+        <option class="zone" *ngFor="let budget of zone" [value]="budget">{{budget}}</option>
+      </select>
+      <p><button type="button" class="submit" (click)="clearFilter()">Clear filter</button></p>
+    </div>
+
+    <div>
+      <p class="proiecte">PROIECTE</p>
+      <p class="bugetare">BUGETARE PARTICIPATIVA</p>
+    </div>
+
   </div>
 
+  <div *ngFor="let project of projects" class="cards">
+    <app-project-card *ngIf="!filtered"  [project1]="project" (click)="goToProject(project)"></app-project-card>
+  </div>
+
+  <div *ngFor="let project of filteredProjects" class="cards">
+    <app-project-card *ngIf="filtered"  [project1]="project" (click)="goToProject(project)"></app-project-card>
+  </div>
 </div>
