@@ -14,7 +14,9 @@
       <input type="text" [(ngModel)]="emailTelefon">
       <p class="label">Parola</p>
       <input type="password" [(ngModel)]="parolaLogin">
-      <button (click)="login()">CONECTEAZA-TE</button>
+      <button (click)="login()">CONECTEAZA-TE
+        <img *ngIf="loading1" style="width : 24px" src="assets/Spinner-1s-200px.gif" />
+      </button>
     </div>
 
     <div class="creare">

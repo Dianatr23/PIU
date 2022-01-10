@@ -6,11 +6,20 @@
     <p class="title">PROIECTE NOU ADAUGATE</p>
     <hr class="hr">
 
-    <button *ngIf="btn1" class="button-proiect1" (click)="seeProject1()">PISTE BICICLETE/ALEI</button>
-    <button *ngIf="btn2" class="button-proiect2" (click)="seeProject2()">EDUCATIE RUTIERA</button>
-    <button *ngIf="btn3" class="button-proiect3" (click)="seeProject3()">PARC DETUNATA</button>
-    <button *ngIf="btn4" class="button-proiect4" (click)="seeProject4()">INCURAJAM CITITUL</button>
-    <button *ngIf="btn5" class="button-proiect5" (click)="seeProject5()">ACOPERISUL VERDE</button>
+    <button *ngIf="btn1" class="button-proiect1" (click)="seeProject1()">PISTE BICICLETE/ALEI
+        <img *ngIf="loading1" style="width : 24px" src="assets/Spinner-1s-200px.gif" />
+    </button>
+    <button *ngIf="btn2" class="button-proiect2" (click)="seeProject2()">EDUCATIE RUTIERA
+        <img *ngIf="loading2" style="width : 24px" src="assets/Spinner-1s-200px.gif" />
+    </button>
+    <button *ngIf="btn3" class="button-proiect3" (click)="seeProject3()">PARC DETUNATA
+        <img *ngIf="loading3" style="width : 24px" src="assets/Spinner-1s-200px.gif" />
+    </button>
+    <button *ngIf="btn4" class="button-proiect4" (click)="seeProject4()">
+        <img *ngIf="loading4" style="width : 24px" src="assets/Spinner-1s-200px.gif" />INCURAJAM CITITUL</button>
+    <button *ngIf="btn5" class="button-proiect5" (click)="seeProject5()">ACOPERISUL VERDE
+        <img *ngIf="loading5" style="width : 24px" src="assets/Spinner-1s-200px.gif" />
+    </button>
 
     <div *ngIf="div1" class="proiect">
         <div class="row-input">

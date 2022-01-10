@@ -19,6 +19,13 @@ export class NewProjectsComponent implements OnInit {
   btn4 = true;
   btn5 = true;
   div_button = true;
+
+  loading1 = false;
+  loading2 = false;
+  loading3 = false;
+  loading4 = false;
+  loading5 = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -26,43 +33,69 @@ export class NewProjectsComponent implements OnInit {
 
 
   seeProject1(): void {
-    this.div1 = true;
+    this.loading1 = true;
+    setTimeout(() =>{
+      this.loading1 = false;
+      this.div1 = true;
     this.div2 = false;
     this.div3 = false;
     this.div4 = false;
     this.div5 = false;
+    },2000);
+    
   }
 
   seeProject2(): void {
-    this.div2 = true;
-    this.div1 = false;
-    this.div3 = false;
-    this.div4 = false;
-    this.div5 = false;
+    this.loading2 = true;
+    setTimeout(() =>{
+      this.loading2 = false;
+      this.div2 = true;
+      this.div1 = false;
+      this.div3 = false;
+      this.div4 = false;
+      this.div5 = false;
+
+    },2000);
+   
   }
 
   seeProject3(): void {
-    this.div3 = true;
-    this.div1 = false;
-    this.div2 = false;
-    this.div4 = false;
-    this.div5 = false;
+    this.loading3 = true;
+    setTimeout(() =>{
+      this.loading3 = false;
+      this.div3 = true;
+      this.div1 = false;
+      this.div2 = false;
+      this.div4 = false;
+      this.div5 = false;
+    },2000);
+   
   }
 
   seeProject4(): void {
-    this.div4 = true;
-    this.div1 = false;
-    this.div2 = false;
-    this.div3 = false;
-    this.div5 = false;
+    this.loading4 = true;
+    setTimeout(() =>{
+      this.loading4 = false;
+      this.div4 = true;
+      this.div1 = false;
+      this.div2 = false;
+      this.div3 = false;
+      this.div5 = false;
+    },2000);
+   
   }
 
   seeProject5(): void {
-    this.div5 = true;
-    this.div1 = false;
-    this.div2 = false;
-    this.div3 = false;
-    this.div4 = false;
+    this.loading5 = true;
+    setTimeout(() =>{
+      this.loading5 = false;
+      this.div5 = true;
+      this.div1 = false;
+      this.div2 = false;
+      this.div3 = false;
+      this.div4 = false;
+    },2000);
+   
   }
 
   acceptProject1():void{

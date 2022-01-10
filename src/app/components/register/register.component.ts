@@ -25,6 +25,8 @@ export class RegisterComponent implements OnInit {
   emailTelefon = '';
   parolaLogin = '';
 
+  loading1 = false;
+
   account = new Account('Trifu', 'Diana', 'diana_trifu@yahoo.com', '0723382900',
     'Marasti', 'Grigorescu', 'diana', false);
 
@@ -46,21 +48,26 @@ export class RegisterComponent implements OnInit {
   }
 
   login(): void {
-    if (this.emailTelefon === this.account.email || this.emailTelefon === this.account.telefon) {
-      if (this.parolaLogin === this.account.parola) {
-        this.router.navigateByUrl('main-page');
-        localStorage.setItem('user', this.account.email);
-        localStorage.setItem('zona1', this.account.zona1);
-        localStorage.setItem('zona2', this.account.zona2);
+    this.loading1 = true;
+    setTimeout(() =>{
+      this.loading1 = false;
+      if (this.emailTelefon === this.account.email || this.emailTelefon === this.account.telefon) {
+        if (this.parolaLogin === this.account.parola) {
+          this.router.navigateByUrl('main-page');
+          localStorage.setItem('user', this.account.email);
+          localStorage.setItem('zona1', this.account.zona1);
+          localStorage.setItem('zona2', this.account.zona2);
+        }
       }
-    }
-    else if(this.emailTelefon === this.account_admin.email || this.emailTelefon === this.account_admin.telefon){
-      if(this.parolaLogin === this.account_admin.parola){
-        this.router.navigateByUrl('main-page');
-        localStorage.setItem('user',this.account_admin.email);
-        localStorage.setItem('zona1', this.account.zona1);
-        localStorage.setItem('zona2', this.account.zona2);
+      else if(this.emailTelefon === this.account_admin.email || this.emailTelefon === this.account_admin.telefon){
+        if(this.parolaLogin === this.account_admin.parola){
+          this.router.navigateByUrl('main-page');
+          localStorage.setItem('user',this.account_admin.email);
+          localStorage.setItem('zona1', this.account.zona1);
+          localStorage.setItem('zona2', this.account.zona2);
+        }
       }
-    }
+    },2000);
+    
   }
 }
