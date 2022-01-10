@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
           localStorage.setItem('telefon', this.account.telefon);
           localStorage.setItem('zona1', this.account.zona1);
           localStorage.setItem('zona2', this.account.zona2);
-          // localStorage.setItem('notificari', String(this.account.notificari));
+          localStorage.setItem('notificari', String(this.account.notificari));
           localStorage.setItem('project1', String(this.account.user.project1));
           localStorage.setItem('project2', String(this.account.user.project2));
           localStorage.setItem('project3', String(this.account.user.project3));
@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
           localStorage.setItem('telefon', this.account_admin.telefon);
           localStorage.setItem('zona1', this.account_admin.zona1);
           localStorage.setItem('zona2', this.account_admin.zona2);
-          // localStorage.setItem('notificari', String(this.account_admin.notificari));
+          localStorage.setItem('notificari', String(this.account_admin.notificari));
           localStorage.setItem('role', 'admin');
         }
       }
