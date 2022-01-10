@@ -1,0 +1,37 @@
+img{
+  margin-top: 10px;
+  width: 1090px;
+}
+
+p{
+  margin: auto;
+}
+
+.chat{
+  border: 1px solid black;
+  width: 340px;
+  margin-top: 10px;
+}
+
+.asezare{
+  display: flex;
+}
+
+.text{
+  width: 242px;
+  height: 20px;
+  margin-top: -10px;
+}
+
+.send{
+  width: 90px;
+  height: 27px;
+}
+
+.opinions{
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  height: 586px;
+}
+

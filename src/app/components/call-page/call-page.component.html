@@ -1,0 +1,12 @@
+<div>
+  <app-header></app-header>
+</div>
+<div class="asezare">
+  <img src="assets/presentation.gif">
+  <div class="chat">
+    <div class="content">
+      <div class="opinions"></div>
+      <p><input class="text" type="text" placeholder="Introduceti mesajul" #text><button class="send" type="button" (click)="sendOpinion(text.value)">Send</button></p>
+    </div>
+  </div>
+</div>

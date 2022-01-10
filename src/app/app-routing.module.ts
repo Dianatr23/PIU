@@ -10,6 +10,7 @@ import {ProjectsInImplementationComponent} from "./components/projects-in-implem
 import {HelpComponent} from './components/help/help.component';
 import {ProjectComponent} from "./components/project/project.component";
 import { NewProjectsComponent } from './components/new-projects/new-projects.component';
+import {CallPageComponent} from "./components/call-page/call-page.component";
 
 const routes: Routes = [
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'new-projects',
     component: NewProjectsComponent
+  },
+  {
+    path: 'meeting',
+    component: CallPageComponent
   },
   {path: '**', redirectTo: '/main-page'}
 ];

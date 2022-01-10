@@ -19,6 +19,7 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ProjectComponent } from './components/project/project.component';
 import { NewProjectsComponent } from './components/new-projects/new-projects.component';
+import { CallPageComponent } from './components/call-page/call-page.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NewProjectsComponent } from './components/new-projects/new-projects.com
     ProjectCardComponent,
     ProjectComponent,
     NewProjectsComponent,
-    HelpComponent
+    HelpComponent,
+    CallPageComponent
   ],
   imports: [
     BrowserModule,

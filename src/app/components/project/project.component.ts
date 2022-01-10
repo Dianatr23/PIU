@@ -96,7 +96,15 @@ export class ProjectComponent implements OnInit {
     }
   }
 
-  meetingParticipate(): void{
-    alert("Aceasta intalnire nu este in desfasurare. Verificati detaliile de mai jos.");
+  meetingParticipate(): void {
+    if (localStorage.getItem('user') == '')
+      this.router.navigateByUrl('/register');
+    else {
+      if (localStorage.getItem("project" + this.project1.position.toString()) === "true") {
+        this.router.navigateByUrl('/meeting');
+      } else {
+        alert("Aceasta intalnire nu este in desfasurare. Verificati detaliile de mai jos.");
+      }
+    }
   }
 }
