@@ -32,7 +32,7 @@ export class ProjectsComponent implements OnInit {
 
   item2 = new Project(
     "Renovarea trotuarelor pietonale",
-    "assets/locuri-de-joaca.jpeg",
+    "assets/trotuar.jpg",
     "Marcel Pavel",
     "Creați umbră oriunde doriți cu parasolarul din HDPE de înaltă calitate. Este parasolarul ideal care poate fi utilizat într-o varietate de spații în aer liber, cum ar fi locurile de joacă.\n" +
     "\n" +
@@ -40,7 +40,7 @@ export class ProjectsComponent implements OnInit {
     "\n" +
     "Parasolarul este ușor de asamblat datorită elementelor de fixare din oțel inoxidabil pe fiecare colț și a funiei incluse.",
     3000,
-    "Agrement",
+    "Amenajare spatii publice",
     2021,
     "10 Februarie 2022",
     "Ora 10:00",
@@ -52,7 +52,7 @@ export class ProjectsComponent implements OnInit {
 
   item3 = new Project(
     "Crearea de noi parcari",
-    "assets/locuri-de-joaca.jpeg",
+    "assets/parcari.jpg",
     "Marcel Pavel",
     "Creați umbră oriunde doriți cu parasolarul din HDPE de înaltă calitate. Este parasolarul ideal care poate fi utilizat într-o varietate de spații în aer liber, cum ar fi locurile de joacă.\n" +
     "\n" +
@@ -67,14 +67,16 @@ export class ProjectsComponent implements OnInit {
     "Va astept intr-o discutie aprinsa despre proiectul pe care l-am propus. " +
     "Astept parerile voastre constructive. Oricine este binevenit",
     200,
-    "Baciu",
-    "Implementat");
+    "Marasti",
+    "In curs de votare");
 
   projects = [this.item, this.item2, this.item3];
   filteredProjects: Array<Project> = [];
   auxArray: Array<Project> = [];
 
   filtered = false;
+
+  //
 
   categories = ['-Categorie-', 'Agrement', 'Infrastructura', 'Amenajare spatii publice'];
   years = ['-An-', '2021', '2022'];

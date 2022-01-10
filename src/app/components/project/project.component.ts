@@ -69,13 +69,17 @@ export class ProjectComponent implements OnInit {
     if(localStorage.getItem('user') == '')
       this.router.navigateByUrl('/register');
     else {
-      let zona1 = localStorage.getItem('zona1');
-      let zona2 = localStorage.getItem('zona2');
-      if(this.project1.zone !== zona1 && this.project1.zone !== zona2){
-        alert("Nu puteti vota acest proiect deoarece nu apartine zonelor de interes");
+      if (this.project1.status === "In curs de votare") {
+        let zona1 = localStorage.getItem('zona1');
+        let zona2 = localStorage.getItem('zona2');
+        if (this.project1.zone !== zona1 && this.project1.zone !== zona2) {
+          alert("Nu puteti vota acest proiect deoarece nu apartine zonelor de interes");
+        } else {
+          this.project1.votesNumber = Number(this.project1.votesNumber + 1);
+          localStorage.setItem('votes', this.project1.votesNumber.toString());
+        }
       } else {
-        this.project1.votesNumber = Number(this.project1.votesNumber + 1);
-        localStorage.setItem('votes', this.project1.votesNumber.toString());
+        alert("Acest proiect nu poate fi votat deoarece a trecut de etapa de votare");
       }
     }
   }
