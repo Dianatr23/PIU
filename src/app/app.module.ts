@@ -8,7 +8,6 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
-import { QuestionsComponent } from './components/questions/questions.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectsInImplementationComponent } from './components/projects-in-implementation/projects-in-implementation.component';
@@ -28,7 +27,6 @@ import { NewProjectsComponent } from './components/new-projects/new-projects.com
     HeaderComponent,
     FooterComponent,
     AboutComponent,
-    QuestionsComponent,
     RegisterComponent,
     ProjectsComponent,
     ProjectsInImplementationComponent,

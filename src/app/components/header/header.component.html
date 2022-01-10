@@ -1,6 +1,6 @@
 <div class="header">
   <button class="nav-bar" (click)="goToAbout()">DESPRE</button>
-  <button class="nav-bar" (click)="goToQuestions()">INTREBARI FRECVENTE</button>
+  <button class="nav-bar" (click)="goToHelp()">AJUTOR</button>
   <button *ngIf="!authenticated && !admin" class="nav-bar" (click)="goToRegister()">INTRA IN CONT</button>
   <button *ngIf="authenticated || admin" class="nav-bar" (click)="goToMyAccount()">CONTUL MEU</button>
   <img src="assets/logo-primarie.jpeg">
@@ -8,6 +8,5 @@
   <button class="nav-bar" (click)="goToProjectInImplementation()">PROIECTE IN IMPLEMNETARE</button>
   <button *ngIf="!authenticated && !admin" class="nav-bar" (click)="goToRegister()">INREGISTRARE</button>
   <button *ngIf="authenticated" class="nav-bar" (click)="goToMyProjects()">PROIECTELE MELE</button>
-  <button class="nav-bar" (click)="goToHelp()">HELP</button>
   <button *ngIf="admin" class="nav-bar" (click)="goToCheckProjects()">ANALIZA PROIECTE</button>
 </div>
