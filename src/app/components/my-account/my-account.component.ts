@@ -126,5 +126,7 @@ export class MyAccountComponent implements OnInit {
     this.router.navigateByUrl('main-page');
   }
 
-
+  addExtraInfo(): void {
+    localStorage.setItem('extrainfo', 'true');
+  }
 }

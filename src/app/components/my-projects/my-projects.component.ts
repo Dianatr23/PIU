@@ -31,6 +31,7 @@ export class MyProjectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.setItem('extrainfo', 'false');
   }
 
   selectChangeHandler1(event: any): void {
@@ -42,11 +43,15 @@ export class MyProjectsComponent implements OnInit {
   }
 
   create(): void {
-    this.denumire.length < 6 ? this.invalid = true : this.invalid = false;
-    Number(this.buget) < 9 ? this.invalid2 = true : this.invalid2 = false;
-    this.descriere.length < 25 ? this.invalid1 = true : this.invalid1 = false;
-    this.why.length < 30 ? this.invalid3 = true : this.invalid3 = false;
-    console.log(Number(this.buget));
-  }
+    if (localStorage.getItem('extrainfo') === null || localStorage.getItem('extrainfo') === 'false') {
+      this.router.navigateByUrl('/my-account');
+      alert('Pentru a putea propune un proiect, contul dumneavoastra trebuie personalizat!');
+    }
+      this.denumire.length < 6 ? this.invalid = true : this.invalid = false;
+      Number(this.buget) < 9 ? this.invalid2 = true : this.invalid2 = false;
+      this.descriere.length < 25 ? this.invalid1 = true : this.invalid1 = false;
+      this.why.length < 30 ? this.invalid3 = true : this.invalid3 = false;
+      console.log(Number(this.buget));
+    }
 
-}
+  }
