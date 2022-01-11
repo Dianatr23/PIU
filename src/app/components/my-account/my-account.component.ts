@@ -125,4 +125,6 @@ export class MyAccountComponent implements OnInit {
     localStorage.setItem('role', '');
     this.router.navigateByUrl('main-page');
   }
+
+
 }
